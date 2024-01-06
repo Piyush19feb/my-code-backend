@@ -76,4 +76,7 @@ module.exports.Leetcode = connection_to_leetcode.model(
   LeetcodeScheme,
   "qna"
 );
-module.exports.User = connection_to_leetcode.model("User", userScheme, "Users");
+
+module.exports.User = mongoose.createConnection(
+  store.mongo_uri + "/LeetcodeIo"
+).model("User", userScheme, "Users");

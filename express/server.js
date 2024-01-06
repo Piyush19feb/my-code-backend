@@ -1,7 +1,5 @@
 "use strict";
 const express = require("express");
-const mongoose = require("mongoose");
-const store = require("./../environment.js");
 const app = express();
 const bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
@@ -15,19 +13,8 @@ const newLeetcodeRouter = require("./leetcode/newLeetcode");
 const leetcodeDelRouter = require("./leetcode/delLeetcode");
 const leetcodeUpdateRouter = require("./leetcode/updateLeetcode");
 
-const url = store.mongo_uri + "/";
-
-console.log(url);
-
-const url_admin = store.mongo_uri + "/leetcode";
 
 const router = express.Router();
-
-mongoose.connect(
-  url_admin,
-  { useNewUrlParser: true, useUnifiedTopology: true }
-  // () => console.log("connected to db")
-);
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: "50mb" }));
