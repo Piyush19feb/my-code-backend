@@ -28,7 +28,7 @@ app.use(cookieParser());
 // app.use(logger("dev"));
 
 app.use((res,req,next)=>{
-  res.headers("Access-Control-Allow-Origin","*");
+  res.header("Access-Control-Allow-Origin","*");
   next();
 })
 
