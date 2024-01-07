@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // for parsing multipart/form-data
 app.use(express.static("public"));
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(cookieParser());
 // app.use(logger("dev"));
 
