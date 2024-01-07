@@ -13,7 +13,6 @@ const newLeetcodeRouter = require("./leetcode/newLeetcode");
 const leetcodeDelRouter = require("./leetcode/delLeetcode");
 const leetcodeUpdateRouter = require("./leetcode/updateLeetcode");
 
-
 const router = express.Router();
 
 app.use(express.json());
@@ -27,10 +26,10 @@ app.use(cors());
 app.use(cookieParser());
 // app.use(logger("dev"));
 
-app.use((req,res,next)=>{
-  res.header("Access-Control-Allow-Origin","*");
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
   next();
-})
+});
 
 app.use("/", router); // path must route to lambda
 app.use("/auth", routerAuth);
