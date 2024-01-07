@@ -27,6 +27,11 @@ app.use(cors());
 app.use(cookieParser());
 // app.use(logger("dev"));
 
+app.use((res,req,next)=>{
+  res.headers("Access-Control-Allow-Origin","*");
+  next();
+})
+
 app.use("/", router); // path must route to lambda
 app.use("/auth", routerAuth);
 
